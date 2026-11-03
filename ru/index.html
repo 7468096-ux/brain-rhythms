@@ -19,7 +19,7 @@
 <style>html{color-scheme:light}body{margin:0}img{max-width:100%}</style>
 <title>Ритмы мозга</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600&family=Golos+Text:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600&family=Golos+Text:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
 <style>
 /* Layout: EEG paper. Sticky tab bar; each tab is one long column of figures with captions and sources. */
 :root{
@@ -47,26 +47,26 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .wrap{max-width:1000px;margin:0 auto}
 main .wrap{padding-block:36px 72px}
 .view{display:flex;flex-direction:column;gap:72px}
-h1,h2,h3{font-family:var(--display);font-weight:600;text-wrap:balance;margin:0;letter-spacing:-.01em}
+h1,h2,h3{font-family:var(--display);font-weight:500;text-wrap:balance;margin:0;letter-spacing:-.01em}
 h1{font-size:clamp(30px,6vw,52px);line-height:1.08}
 h2{font-size:clamp(22px,3.6vw,30px);line-height:1.2}
-h3{font-size:15px;font-weight:600}
+h3{font-size:15px;font-weight:500;letter-spacing:0}
 p{margin:0}
 a{color:inherit}
 .lead{color:var(--muted);max-width:62ch;font-size:17px}
-.eyebrow{font:500 12px/1.2 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.eyebrow{font:500 12px/1.2 var(--mono);color:var(--muted)}
 .mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
 section{display:flex;flex-direction:column;gap:24px}
-.head{display:flex;flex-direction:column;gap:10px}
-.note{font-size:13.5px;color:var(--muted);max-width:70ch}
-.src{font:12.5px/1.5 var(--mono);color:var(--muted)}
+.head{display:flex;flex-direction:column;gap:12px}
+.note{font-size:14px;color:var(--muted);max-width:70ch}
+.src{font:12px/1.5 var(--mono);color:var(--muted)}
 .src a{text-decoration-color:var(--line);text-underline-offset:3px}
 .src a:hover{color:var(--fg)}
 
 /* nav */
 .nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.nav .wrap{display:flex;align-items:center;gap:20px;min-height:58px}
-.brand{font:600 15px var(--display);white-space:nowrap;display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav .wrap{display:flex;align-items:center;gap:20px;min-height:56px}
+.brand{font:500 15px var(--display);white-space:nowrap;display:flex;align-items:center;gap:12px;text-decoration:none}
 .brand svg{width:26px;height:14px}
 .navlinks{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;margin-left:auto}
 .navlinks::-webkit-scrollbar{display:none}
@@ -74,29 +74,29 @@ section{display:flex;flex-direction:column;gap:24px}
 .navlinks a:hover{color:var(--fg)}
 .navlinks a[aria-current="page"]{color:var(--fg);background:var(--paper);box-shadow:inset 0 0 0 1px var(--line)}
 .navlinks a:focus-visible{outline:2px solid var(--fg);outline-offset:2px}
-@media (max-width:640px){.brand span{display:none}.nav .wrap{gap:4px}.navlinks a{padding:8px 8px;font-size:13.5px}}
+@media (max-width:640px){.brand span{display:none}.nav .wrap{gap:4px}.navlinks a{padding:8px 8px;font-size:13px}}
 .story,section{scroll-margin-top:76px}
 
 /* EEG strip */
-.strip{background:var(--paper);border:1px solid var(--line);border-radius:14px;overflow:hidden;
+.strip{background:var(--paper);border:1px solid var(--line);border-radius:16px;overflow:hidden;
   background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:24px 24px}
 .ch{display:grid;grid-template-columns:118px 1fr;align-items:center;border:0;border-bottom:1px solid var(--line);background:transparent;color:inherit;font:inherit;text-align:left;cursor:pointer;padding:0;width:100%;transition:background .2s}
 .ch:last-child{border-bottom:0}
 .ch:hover{background:color-mix(in srgb,var(--c) 6%,transparent)}
 .ch[aria-pressed="true"]{background:color-mix(in srgb,var(--c) 11%,transparent)}
 .ch:focus-visible{outline:2px solid var(--c);outline-offset:-2px}
-.ch .lab{padding:10px 12px 10px 16px;display:flex;flex-direction:column;gap:2px;border-right:1px solid var(--line)}
-.ch .lab b{font:600 14px var(--display);color:var(--c)}
+.ch .lab{padding:8px 12px 8px 16px;display:flex;flex-direction:column;gap:2px;border-right:1px solid var(--line)}
+.ch .lab b{font:500 14px var(--display);color:var(--c)}
 .ch .lab span{font:12px var(--mono);color:var(--muted)}
 .ch canvas{width:100%;height:58px;display:block}
 .strip-foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font:12px var(--mono);color:var(--muted)}
-.spec{display:flex;height:10px;border-radius:5px;overflow:hidden;gap:2px}
+.spec{display:flex;height:10px;border-radius:4px;overflow:hidden;gap:2px}
 .spec i{display:block;height:100%;background:var(--c)}
-.spec-lab{display:flex;justify-content:space-between;font:11px var(--mono);color:var(--muted);margin-top:6px}
+.spec-lab{display:flex;justify-content:space-between;font:12px var(--mono);color:var(--muted);margin-top:8px}
 
 /* tabs (rhythm pills) */
-.tabs{display:flex;gap:6px;flex-wrap:wrap}
-.tab{font:500 14px var(--body);border:1px solid var(--line);background:var(--paper);color:var(--fg);padding:8px 14px;border-radius:999px;cursor:pointer;display:flex;align-items:center;gap:8px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap}
+.tab{font:500 14px var(--body);border:1px solid var(--line);background:var(--paper);color:var(--fg);padding:8px 16px;border-radius:8px;cursor:pointer;display:flex;align-items:center;gap:8px}
 .tab::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--c)}
 .tab[aria-selected="true"],.tab[aria-pressed="true"]{background:var(--c);border-color:var(--c);color:var(--paper)}
 .tab[aria-selected="true"]::before,.tab[aria-pressed="true"]::before{background:var(--paper)}
@@ -104,174 +104,174 @@ section{display:flex;flex-direction:column;gap:24px}
 
 /* band detail */
 .band{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:32px;align-items:start}
-.band-hero{display:flex;flex-direction:column;gap:18px;position:sticky;top:80px}
-.art{aspect-ratio:1/1;max-width:100%;border-radius:18px;background:color-mix(in srgb,var(--c) 10%,var(--paper));border:1px solid color-mix(in srgb,var(--c) 25%,var(--line));display:grid;place-items:center;position:relative;overflow:hidden}
+.band-hero{display:flex;flex-direction:column;gap:16px;position:sticky;top:80px}
+.art{aspect-ratio:1/1;max-width:100%;border-radius:16px;background:color-mix(in srgb,var(--c) 10%,var(--paper));border:1px solid color-mix(in srgb,var(--c) 25%,var(--line));display:grid;place-items:center;position:relative;overflow:hidden}
 .art svg{width:62%;height:auto;color:var(--c)}
-.art .hz{position:absolute;left:16px;bottom:14px;font:500 13px var(--mono);color:var(--c)}
-.art .greek{position:absolute;right:18px;top:6px;font:400 64px/1.2 var(--display);color:color-mix(in srgb,var(--c) 30%,transparent)}
-.band-name{display:flex;flex-direction:column;gap:6px}
+.art .hz{position:absolute;left:16px;bottom:16px;font:500 13px var(--mono);color:var(--c)}
+.art .greek{position:absolute;right:16px;top:8px;font:400 64px/1.2 var(--display);color:color-mix(in srgb,var(--c) 30%,transparent)}
+.band-name{display:flex;flex-direction:column;gap:8px}
 .band-name h2{color:var(--c)}
 .band-name p{color:var(--muted)}
-.facts{display:flex;flex-direction:column;gap:26px;min-width:0}
-.block{display:flex;flex-direction:column;gap:10px}
-.block h3{display:flex;align-items:center;gap:10px}
+.facts{display:flex;flex-direction:column;gap:24px;min-width:0}
+.block{display:flex;flex-direction:column;gap:12px}
+.block h3{display:flex;align-items:center;gap:12px}
 .block h3::before{content:"";width:18px;height:2px;background:var(--c)}
 ul.clean{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
-ul.clean li{padding-left:18px;position:relative}
+ul.clean li{padding-left:16px;position:relative}
 ul.clean li::before{content:"";position:absolute;left:0;top:.72em;width:6px;height:6px;border-radius:50%;background:var(--c)}
-.balance{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.bal{border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:var(--paper);display:flex;flex-direction:column;gap:4px;font-size:14.5px}
-.bal .k{font:500 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
-.how{counter-reset:h;display:flex;flex-direction:column;gap:10px;margin:0;padding:0;list-style:none}
-.how li{display:grid;grid-template-columns:30px 1fr;gap:10px;align-items:start}
-.how li b{font-weight:600}
-.how li::before{counter-increment:h;content:counter(h);font:500 12px/26px var(--mono);text-align:center;width:26px;height:26px;border-radius:50%;border:1px solid var(--c);color:var(--c)}
-.how li span{color:var(--muted);display:block;font-size:14.5px}
-.golink{font:500 14px var(--body);color:var(--c);text-decoration:none;display:inline-flex;gap:6px;align-items:center}
+.balance{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.bal{border:1px solid var(--line);border-radius:12px;padding:12px 16px;background:var(--paper);display:flex;flex-direction:column;gap:4px;font-size:14px}
+.bal .k{font:500 12px var(--mono);color:var(--muted)}
+.how{counter-reset:h;display:flex;flex-direction:column;gap:12px;margin:0;padding:0;list-style:none}
+.how li{display:grid;grid-template-columns:24px 1fr;gap:12px;align-items:start}
+.how li b{font-weight:500}
+.how li::before{counter-increment:h;content:counter(h);font:500 12px/24px var(--mono);text-align:center;width:24px;height:24px;border-radius:50%;border:1px solid var(--c);color:var(--c)}
+.how li span{color:var(--muted);display:block;font-size:14px}
+.golink{font:500 14px var(--body);color:var(--c);text-decoration:none;display:inline-flex;gap:8px;align-items:center}
 .golink:hover{text-decoration:underline;text-underline-offset:3px}
 
 /* cards & generic */
-.card{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:22px;display:flex;flex-direction:column;gap:18px;min-width:0}
-.readout{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
-.readout .big{font:600 clamp(34px,7vw,48px)/1 var(--display);font-variant-numeric:tabular-nums}
-.pill{font:500 14px var(--body);padding:4px 12px;border-radius:999px;background:var(--c);color:var(--paper)}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:16px;min-width:0}
+.readout{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap}
+.readout .big{font:500 clamp(34px,7vw,48px)/1 var(--display);font-variant-numeric:tabular-nums}
+.pill{font:500 14px var(--body);padding:4px 12px;border-radius:4px;background:var(--c);color:var(--paper)}
 .readout .st{color:var(--muted)}
-.gridbg{background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:20px 20px;border-radius:10px}
+.gridbg{background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:20px 20px;border-radius:8px}
 #exCanvas{width:100%;height:120px;display:block}
 input[type=range]{width:100%;accent-color:var(--c,var(--fg));height:28px}
-.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
-.btn{font:500 14px var(--body);border:1px solid var(--fg);background:var(--fg);color:var(--bg);padding:10px 16px;border-radius:10px;cursor:pointer;display:inline-flex;gap:8px;align-items:center}
+.row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.btn{font:500 14px var(--body);border:1px solid var(--fg);background:var(--fg);color:var(--bg);padding:12px 16px;border-radius:8px;cursor:pointer;display:inline-flex;gap:8px;align-items:center}
 .btn.ghost{background:transparent;color:var(--fg);border-color:var(--line)}
 .btn.ghost[aria-pressed="true"]{border-color:var(--fg)}
 .btn:focus-visible{outline:2px solid var(--c,var(--fg));outline-offset:2px}
-.seg{display:inline-flex;border:1px solid var(--line);border-radius:10px;padding:3px;gap:2px;background:var(--bg);flex-wrap:wrap}
-.seg button{font:500 13.5px var(--body);border:0;background:transparent;color:var(--muted);padding:7px 12px;border-radius:7px;cursor:pointer}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:8px;padding:4px;gap:2px;background:var(--bg);flex-wrap:wrap}
+.seg button{font:500 13px var(--body);border:0;background:transparent;color:var(--muted);padding:8px 12px;border-radius:4px;cursor:pointer}
 .seg button[aria-pressed="true"]{background:var(--paper);color:var(--fg);box-shadow:0 0 0 1px var(--line)}
 .seg button:focus-visible{outline:2px solid var(--fg)}
 
 /* day */
-.day-bar{display:flex;height:44px;border-radius:10px;overflow:hidden;gap:2px}
+.day-bar{display:flex;height:44px;border-radius:8px;overflow:hidden;gap:2px}
 .day-bar div{background:var(--c);flex:var(--w)}
-.day-ticks{display:flex;justify-content:space-between;font:11px var(--mono);color:var(--muted)}
-.legend{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px 24px}
-.legend div{display:grid;grid-template-columns:62px 1fr;gap:10px;font-size:14.5px}
+.day-ticks{display:flex;justify-content:space-between;font:12px var(--mono);color:var(--muted)}
+.legend{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px 24px}
+.legend div{display:grid;grid-template-columns:62px 1fr;gap:12px;font-size:14px}
 .legend .t{font:12px/1.9 var(--mono);color:var(--muted)}
-.legend b{color:var(--c);font-weight:600}
+.legend b{color:var(--c);font-weight:500}
 .myths{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px 20px}
-.myth{border-top:2px solid var(--fg);padding-top:14px;display:flex;flex-direction:column;gap:8px}
-.myth .m{font-weight:600}
+.myth{border-top:2px solid var(--fg);padding-top:16px;display:flex;flex-direction:column;gap:8px}
+.myth .m{font-weight:500}
 .myth p:last-child{color:var(--muted);font-size:15px}
 
 /* brain */
 .brain{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:20px;align-items:start}
-.stage{position:relative;background:var(--stage);border-radius:18px;overflow:hidden;aspect-ratio:4/3.2;max-width:100%;touch-action:none;cursor:grab}
+.stage{position:relative;background:var(--stage);border-radius:16px;overflow:hidden;aspect-ratio:4/3.2;max-width:100%;touch-action:none;cursor:grab}
 .stage:active{cursor:grabbing}
 .stage canvas{width:100%;height:100%;display:block}
-.stage .hud{position:absolute;left:14px;top:12px;right:14px;display:flex;justify-content:space-between;gap:10px;font:12px var(--mono);color:var(--stage-muted);pointer-events:none}
+.stage .hud{position:absolute;left:16px;top:12px;right:16px;display:flex;justify-content:space-between;gap:12px;font:12px var(--mono);color:var(--stage-muted);pointer-events:none}
 .stage .hud b{color:var(--stage-fg);font-weight:500}
-.stage .hint{position:absolute;left:14px;bottom:12px;font:12px var(--mono);color:var(--stage-muted);pointer-events:none}
+.stage .hint{position:absolute;left:16px;bottom:12px;display:flex;align-items:center;gap:8px;font:12px var(--mono);color:var(--stage-muted);pointer-events:none}
 .stage .nogl{position:absolute;inset:0;display:grid;place-items:center;color:var(--stage-muted);font-size:14px;padding:20px;text-align:center}
 .side{display:flex;flex-direction:column;gap:16px;min-width:0}
-.map2d{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:10px}
+.map2d{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:12px}
 .map2d svg{width:100%;height:auto;display:block}
 .map2d .outline{fill:none;stroke:var(--fg);stroke-width:1.4;opacity:.75}
 .map2d .sulc{fill:none;stroke:var(--muted);stroke-width:1;opacity:.6}
 .map2d .lbl{font:10px var(--mono);fill:var(--muted)}
 .map2d .zone{opacity:0;transition:opacity .4s}
 .map2d .zone.on{opacity:1}
-.cap{display:flex;flex-direction:column;gap:10px}
+.cap{display:flex;flex-direction:column;gap:12px}
 .cap h3{font-size:18px;color:var(--c)}
 
 /* research */
-.story{display:flex;flex-direction:column;gap:18px;padding-top:28px;border-top:1px solid var(--line)}
-.story-h{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 24px;align-items:end}
+.story{display:flex;flex-direction:column;gap:16px;padding-top:28px;border-top:1px solid var(--line)}
+.story-h{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px 24px;align-items:end}
 .tagline{display:flex;gap:8px;flex-wrap:wrap}
-.chip{font:500 11.5px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;padding:6px 9px;border-radius:6px;border:1px solid var(--line);color:var(--muted)}
+.chip{font:500 12px/1 var(--mono);padding:4px 8px;border-radius:4px;border:1px solid var(--line);color:var(--muted)}
 .chip.real{border-color:color-mix(in srgb,var(--alpha) 60%,var(--line));color:var(--alpha)}
 .chip.paper{border-color:color-mix(in srgb,var(--delta) 50%,var(--line));color:var(--delta)}
 .chip.rct{border-color:color-mix(in srgb,var(--alpha) 60%,var(--line));color:var(--alpha)}
 .chip.obs{border-color:color-mix(in srgb,var(--theta) 55%,var(--line));color:var(--theta)}
 .chip.model{border-color:color-mix(in srgb,var(--beta) 55%,var(--line));color:var(--beta)}
 .two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px}
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:14px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:16px}
 .stat{display:flex;flex-direction:column;gap:2px}
-.stat b{font:600 22px var(--display);font-variant-numeric:tabular-nums}
+.stat b{font:500 22px var(--display);font-variant-numeric:tabular-nums}
 .stat span{font-size:13px;color:var(--muted)}
-.night{position:relative;display:flex;flex-direction:column;gap:6px;user-select:none;touch-action:pan-y}
+.night{position:relative;display:flex;flex-direction:column;gap:8px;user-select:none;touch-action:pan-y}
 .night canvas{width:100%;display:block}
 .night .xh{position:absolute;top:0;bottom:22px;width:1px;background:var(--fg);opacity:.5;pointer-events:none}
-.rd{display:flex;gap:6px 16px;flex-wrap:wrap;font:13px var(--mono);color:var(--muted);min-height:22px}
+.rd{display:flex;gap:8px 16px;flex-wrap:wrap;font:13px var(--mono);color:var(--muted);min-height:22px}
 .rd b{color:var(--fg);font-weight:500}
-.sw{display:inline-block;width:9px;height:9px;border-radius:2px;background:var(--c);margin-right:5px;vertical-align:0}
+.sw{display:inline-block;width:9px;height:9px;border-radius:2px;background:var(--c);margin-right:4px;vertical-align:0}
 canvas.trace{width:100%;height:130px;display:block}
 .bars{display:flex;flex-direction:column;gap:12px}
 .barrow{display:grid;grid-template-columns:110px 1fr 64px;gap:12px;align-items:center;font-size:14px}
-.barrow .tr{height:22px;background:var(--bg);border-radius:6px;overflow:hidden;border:1px solid var(--line)}
-.barrow .fill{height:100%;background:var(--c);border-radius:5px 0 0 5px;transition:width .6s}
+.barrow .tr{height:22px;background:var(--bg);border-radius:4px;overflow:hidden;border:1px solid var(--line)}
+.barrow .fill{height:100%;background:var(--c)}
 .barrow .v{font:500 14px var(--mono);text-align:right}
 .matrix{display:grid;grid-template-columns:auto 1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;font-size:14px}
-.matrix > div{background:var(--paper);padding:12px 14px}
-.matrix .mh{font:500 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:var(--bg)}
-.lvl{display:flex;gap:3px;margin-bottom:6px}
+.matrix > div{background:var(--paper);padding:12px 16px}
+.matrix .mh{font:500 12px var(--mono);color:var(--muted);background:var(--bg)}
+.lvl{display:flex;gap:4px;margin-bottom:8px}
 .lvl i{width:14px;height:8px;border-radius:2px;background:var(--line)}
 .lvl i.on{background:var(--gamma)}
-.digits{font:600 28px var(--mono);letter-spacing:.2em;min-height:42px}
+.digits{font:500 28px var(--mono);letter-spacing:.2em;min-height:42px}
 #tissue{width:100%;height:auto;display:block;border-radius:12px}
 
 /* practice */
 .prac{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;align-items:start}
-.breath{position:relative;aspect-ratio:1/1;max-width:100%;border-radius:20px;background:color-mix(in srgb,var(--c) 8%,var(--paper));border:1px solid color-mix(in srgb,var(--c) 22%,var(--line));display:grid;place-items:center;overflow:hidden}
+.breath{position:relative;aspect-ratio:1/1;max-width:100%;border-radius:16px;background:color-mix(in srgb,var(--c) 8%,var(--paper));border:1px solid color-mix(in srgb,var(--c) 22%,var(--line));display:grid;place-items:center;overflow:hidden}
 .ring{position:absolute;width:72%;aspect-ratio:1/1;border-radius:50%;border:1px dashed color-mix(in srgb,var(--c) 40%,transparent)}
-.orb{width:72%;aspect-ratio:1/1;border-radius:50%;background:radial-gradient(circle at 40% 35%,color-mix(in srgb,var(--c) 55%,var(--paper)),var(--c));transform:scale(.45);opacity:.9}
+.orb{width:72%;aspect-ratio:1/1;border-radius:50%;background:var(--c);transform:scale(.45);opacity:.9}
 .bcenter{position:absolute;display:flex;flex-direction:column;align-items:center;gap:4px;text-align:center;color:var(--paper);pointer-events:none}
-.bcenter .ph{font:600 clamp(20px,4vw,28px) var(--display)}
+.bcenter .ph{font:500 clamp(20px,4vw,28px) var(--display)}
 .bcenter .sec{font:500 15px var(--mono)}
-.bfoot{position:absolute;left:16px;right:16px;bottom:14px;display:flex;justify-content:space-between;font:13px var(--mono);color:var(--muted)}
+.bfoot{position:absolute;left:16px;right:16px;bottom:16px;display:flex;justify-content:space-between;font:13px var(--mono);color:var(--muted)}
 .prompt{position:absolute;top:16px;left:16px;right:16px;text-align:center;font-size:15px;color:var(--fg);min-height:24px;transition:opacity .6s}
 .presets{display:grid;grid-template-columns:1fr;gap:8px}
-.preset{display:grid;grid-template-columns:12px 1fr auto;gap:12px;align-items:center;text-align:left;border:1px solid var(--line);background:var(--paper);color:var(--fg);padding:12px 14px;border-radius:12px;cursor:pointer;font:inherit}
+.preset{display:grid;grid-template-columns:12px 1fr auto;gap:12px;align-items:center;text-align:left;border:1px solid var(--line);background:var(--paper);color:var(--fg);padding:12px 16px;border-radius:12px;cursor:pointer;font:inherit}
 .preset::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--c)}
-.preset b{font-weight:600;display:block}
-.preset span{font-size:13.5px;color:var(--muted)}
+.preset b{font-weight:500;display:block}
+.preset span{font-size:14px;color:var(--muted)}
 .preset em{font:12px var(--mono);font-style:normal;color:var(--muted)}
 .preset[aria-pressed="true"]{border-color:var(--c);box-shadow:inset 0 0 0 1px var(--c)}
 .preset:focus-visible{outline:2px solid var(--c);outline-offset:2px}
 
 /* v3: mixer, radial, timeline, quiz, electrodes */
 .mix{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:24px;align-items:start}
-.sl{display:grid;grid-template-columns:70px 1fr 40px;gap:10px;align-items:center;font-size:14px}
-.sl b{color:var(--c);font-weight:600}
+.sl{display:grid;grid-template-columns:70px 1fr 40px;gap:12px;align-items:center;font-size:14px}
+.sl b{color:var(--c);font-weight:500}
 .sl input{accent-color:var(--c)}
 .sl .v{font:12px var(--mono);color:var(--muted);text-align:right}
-.verdict{display:flex;flex-direction:column;gap:6px}
-.verdict .big2{font:600 clamp(20px,4vw,26px)/1.2 var(--display);color:var(--c)}
-.simbars{display:flex;flex-direction:column;gap:6px}
+.verdict{display:flex;flex-direction:column;gap:8px}
+.verdict .big2{font:500 clamp(20px,4vw,26px)/1.2 var(--display);color:var(--c)}
+.simbars{display:flex;flex-direction:column;gap:8px}
 .simbars .barrow{grid-template-columns:150px 1fr 44px;font-size:13px}
 .simbars .tr{height:14px}
 .night2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;align-items:center}
 #cRadial{width:100%;max-width:440px;aspect-ratio:1/1;display:block;margin:0 auto}
 .play{position:relative}
 .ph-line{position:absolute;top:0;bottom:22px;width:2px;background:var(--gamma);pointer-events:none}
-.tl{display:flex;flex-direction:column;border-left:2px solid var(--line);margin-left:6px}
-.tl-i{display:grid;grid-template-columns:64px 1fr;gap:14px;padding:10px 0 10px 18px;position:relative}
-.tl-i::before{content:"";position:absolute;left:-7px;top:17px;width:12px;height:12px;border-radius:50%;background:var(--paper);border:2px solid var(--c,var(--muted))}
-.tl-i .y{font:600 15px var(--mono);font-variant-numeric:tabular-nums}
+.tl{display:flex;flex-direction:column;border-left:2px solid var(--line);margin-left:8px}
+.tl-i{display:grid;grid-template-columns:64px 1fr;gap:16px;padding:12px 0 12px 16px;position:relative}
+.tl-i::before{content:"";position:absolute;left:-7px;top:19px;width:12px;height:12px;border-radius:50%;background:var(--paper);border:2px solid var(--c,var(--muted))}
+.tl-i .y{font:500 15px var(--mono);font-variant-numeric:tabular-nums}
 .tl-i p{font-size:15px}
-.tl-i a{font-size:13.5px;color:var(--muted)}
-.quiz{max-width:680px;display:flex;flex-direction:column;gap:18px}
+.tl-i a{font-size:14px;color:var(--muted)}
+.quiz{max-width:680px;display:flex;flex-direction:column;gap:16px}
 .qprog{display:flex;gap:4px}
 .qprog i{flex:1;height:4px;border-radius:2px;background:var(--line)}
 .qprog i.ok{background:var(--alpha)}.qprog i.no{background:var(--gamma)}.qprog i.cur{background:var(--fg)}
-.qq{font:600 clamp(19px,3.4vw,24px)/1.3 var(--display);text-wrap:balance}
+.qq{font:500 clamp(19px,3.4vw,24px)/1.3 var(--display);text-wrap:balance}
 .qopts{display:flex;flex-direction:column;gap:8px}
-.qopt{font:inherit;text-align:left;border:1px solid var(--line);background:var(--paper);color:var(--fg);padding:13px 16px;border-radius:12px;cursor:pointer}
+.qopt{font:inherit;text-align:left;border:1px solid var(--line);background:var(--paper);color:var(--fg);padding:12px 16px;border-radius:12px;cursor:pointer}
 .qopt:hover:not(:disabled){border-color:var(--fg)}
 .qopt:disabled{cursor:default}
 .qopt.right{border-color:var(--alpha);background:color-mix(in srgb,var(--alpha) 12%,var(--paper))}
 .qopt.wrong{border-color:var(--gamma);background:color-mix(in srgb,var(--gamma) 10%,var(--paper))}
 .qopt:focus-visible{outline:2px solid var(--fg);outline-offset:2px}
-.qexp{border-left:3px solid var(--c,var(--line));padding:4px 0 4px 14px;display:flex;flex-direction:column;gap:6px}
-.elab{position:absolute;font:600 11px var(--mono);color:#fff;background:rgba(0,0,0,.55);padding:2px 5px;border-radius:4px;transform:translate(-50%,-140%);pointer-events:none;white-space:nowrap}
+.qexp{border-left:3px solid var(--c,var(--line));padding:4px 0 4px 16px;display:flex;flex-direction:column;gap:8px}
+.elab{position:absolute;font:500 12px var(--mono);color:#fff;background:rgba(0,0,0,.55);padding:2px 4px;border-radius:4px;transform:translate(-50%,-140%);pointer-events:none;white-space:nowrap}
 .elab.hi{background:var(--gamma);color:#fff}
 #lcBars .barrow,#rkBars .barrow{grid-template-columns:minmax(0,220px) 1fr 50px}
 section[aria-labelledby="trialsT"] .myths{grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr))}
@@ -279,7 +279,7 @@ section[aria-labelledby="trialsT"] .myths{grid-template-columns:repeat(auto-fit,
 @media (max-width:520px){#lcBars .barrow,#rkBars .barrow{grid-template-columns:minmax(0,1.2fr) minmax(0,1fr) 44px}}
 @media (max-width:520px){.simbars .barrow{grid-template-columns:110px 1fr 40px}}
 
-.lang{font:500 12px var(--mono);letter-spacing:.08em;text-decoration:none;color:var(--muted);border:1px solid var(--line);border-radius:7px;padding:6px 8px;flex:none}
+.lang{font:500 12px var(--mono);text-decoration:none;color:var(--muted);border:1px solid var(--line);border-radius:8px;padding:4px 8px;flex:none}
 .lang:hover{color:var(--fg);border-color:var(--fg)}
 footer{border-top:1px solid var(--line);padding-top:20px;font-size:13px;color:var(--muted);display:flex;flex-direction:column;gap:8px}
 
@@ -295,11 +295,23 @@ footer{border-top:1px solid var(--line);padding-top:20px;font-size:13px;color:va
   .balance{grid-template-columns:1fr}
   .barrow{grid-template-columns:88px 1fr 54px}
   .card{padding:16px}
-  .matrix{font-size:13px}.matrix > div{padding:10px}
+  .matrix{font-size:13px}.matrix > div{padding:12px}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* icons: lucide (ISC), 16px, drawn in the text color */
+[data-ic]::before{content:"";flex:none;width:16px;height:16px;background:currentColor;-webkit-mask:var(--ic) center/contain no-repeat;mask:var(--ic) center/contain no-repeat}
+[data-ic=""]::before{display:none}
+[data-ic="play"]{--ic:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.25' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolygon points='6 3 20 12 6 21 6 3'/%3E%3C/svg%3E")}
+[data-ic="square"]{--ic:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.25' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect width='18' height='18' x='3' y='3' rx='2'/%3E%3C/svg%3E")}
+[data-ic="pause"]{--ic:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.25' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='14' y='4' width='4' height='16' rx='1'/%3E%3Crect x='6' y='4' width='4' height='16' rx='1'/%3E%3C/svg%3E")}
+[data-ic="hand"]{--ic:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.25' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 11V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2'/%3E%3Cpath d='M14 10V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v2'/%3E%3Cpath d='M10 10.5V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2v8'/%3E%3Cpath d='M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15'/%3E%3C/svg%3E")}
+[data-ic="music"]{--ic:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.25' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 18V5l12-2v13'/%3E%3Ccircle cx='6' cy='18' r='3'/%3E%3Ccircle cx='18' cy='16' r='3'/%3E%3C/svg%3E")}
+[data-ic="circle-dot"]{--ic:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.25' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Ccircle cx='12' cy='12' r='1'/%3E%3C/svg%3E")}
+[data-ic="rotate-cw"]{--ic:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.25' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8'/%3E%3Cpath d='M21 3v5h-5'/%3E%3C/svg%3E")}
 </style>
 
+<script>function setBtn(b,ic,t){b.dataset.ic=ic;b.textContent=t}</script>
 </head>
 <body>
 <nav class="nav gut" aria-label="Разделы">
@@ -359,7 +371,7 @@ footer{border-top:1px solid var(--line);padding-top:20px;font-size:13px;color:va
     <label for="exRange" class="eyebrow">Частота</label>
     <input type="range" id="exRange" min="0" max="1000" value="540">
     <div class="row">
-      <button class="btn" id="play" type="button">▶ Слушать в наушниках</button>
+      <button class="btn" id="play" data-ic="play" type="button">Слушать в наушниках</button>
       <label class="row note" for="vol" style="gap:8px">Громкость <input type="range" id="vol" min="0" max="100" value="25" style="width:120px"></label>
     </div>
     <p class="note">Это демонстрация, а не лечение. Исследования бинауральных ритмов дают противоречивые результаты: эффект на внимание и тревогу, если есть, небольшой. Начинайте с тихой громкости.</p>
@@ -374,10 +386,10 @@ footer{border-top:1px solid var(--line);padding-top:20px;font-size:13px;color:va
   </div>
   <div class="card mix" id="mixCard">
     <div style="display:flex;flex-direction:column;gap:12px">
-      <div id="mixSliders" style="display:flex;flex-direction:column;gap:6px"></div>
+      <div id="mixSliders" style="display:flex;flex-direction:column;gap:8px"></div>
       <div class="row" id="mixPresets"><span class="eyebrow">Как в записи:</span></div>
     </div>
-    <div style="display:flex;flex-direction:column;gap:14px;min-width:0">
+    <div style="display:flex;flex-direction:column;gap:16px;min-width:0">
       <canvas id="cMix" class="trace gridbg" aria-label="Собранный сигнал"></canvas>
       <div class="verdict"><span class="eyebrow">Больше всего похоже на</span><span class="big2" id="mixVerdict">—</span></div>
       <div class="simbars" id="mixSim"></div>
@@ -392,7 +404,7 @@ footer{border-top:1px solid var(--line);padding-top:20px;font-size:13px;color:va
     <h2 id="dayT">Какой ритм ведёт в течение дня</h2>
     <p class="lead">Все пять ритмов звучат одновременно всегда. Меняется только то, какой громче. Вот типичный день человека, который спит с 23:00 до 7:00. Настоящую ночную запись смотрите в разделе <a href="#research">«Наука»</a>.</p>
   </div>
-  <div style="display:flex;flex-direction:column;gap:10px">
+  <div style="display:flex;flex-direction:column;gap:12px">
     <div class="day-bar" id="dayBar"></div>
     <div class="day-ticks"><span>00</span><span>04</span><span>08</span><span>12</span><span>16</span><span>20</span><span>24</span></div>
     <div class="legend" id="dayLegend"></div>
@@ -419,13 +431,13 @@ footer{border-top:1px solid var(--line);padding-top:20px;font-size:13px;color:va
 </header>
 
 <section aria-label="3D-модель">
-  <div class="row" style="justify-content:space-between"><div class="tabs" id="bTabs" role="group" aria-label="Ритм"></div><button class="btn ghost" id="elecBtn" type="button" aria-pressed="false">◉ Электроды 10–20</button></div>
+  <div class="row" style="justify-content:space-between"><div class="tabs" id="bTabs" role="group" aria-label="Ритм"></div><button class="btn ghost" id="elecBtn" data-ic="circle-dot" type="button" aria-pressed="false">Электроды 10–20</button></div>
   <p class="note" id="elecNote" hidden>Международная система 10–20 (1958): электроды ставят на расстоянии 10% и 20% от линий между переносицей, затылочным бугром и ушами. Красным выделены пары, с которых снята ночная запись в разделе «Наука»: Fpz-Cz (лоб — макушка) и Pz-Oz (темя — затылок). Прибор пишет разницу потенциалов между двумя точками.</p>
   <div class="brain" id="brainWrap">
     <div class="stage" id="stage">
       <canvas id="gl" aria-label="Трёхмерная модель мозга с активностью выбранного ритма"></canvas>
       <div class="hud"><span><b id="hudName">Дельта</b> · <span id="hudHz">0,5–4 Гц</span></span><span id="hudSlow">замедлено</span></div>
-      <div class="hint">↻ перетащите, чтобы повернуть</div>
+      <div class="hint" data-ic="rotate-cw">перетащите, чтобы повернуть</div>
       <div id="elabs"></div>
     </div>
     <div class="side">
@@ -456,7 +468,7 @@ footer{border-top:1px solid var(--line);padding-top:20px;font-size:13px;color:va
         </svg>
       </div>
       <div class="cap" id="bCap"></div>
-      <div class="row" id="moveRow" hidden><button class="btn" id="moveBtn" type="button">✋ Пошевелить правой рукой</button><span class="note" id="moveState"></span></div>
+      <div class="row" id="moveRow" hidden><button class="btn" id="moveBtn" data-ic="hand" type="button">Пошевелить правой рукой</button><span class="note" id="moveState"></span></div>
     </div>
   </div>
 </section>
@@ -504,11 +516,11 @@ footer{border-top:1px solid var(--line);padding-top:20px;font-size:13px;color:va
     <div class="rd" id="nRead"><span>Наведите или проведите пальцем по графику</span></div>
   </div>
   <div class="card night2">
-    <div style="display:flex;flex-direction:column;gap:14px;min-width:0">
+    <div style="display:flex;flex-direction:column;gap:16px;min-width:0">
       <h3>Послушайте эту ночь</h3>
       <p class="note" style="color:var(--fg)">Сигнал проигрывается в сотни раз быстрее, поэтому волны мозга становятся звуком. Глубокий сон звучит низким гулом, лёгкий сон с веретёнами посвистывает, бодрствование шуршит. Лучше в наушниках, начните с тихой громкости.</p>
       <div class="row"><div class="seg" id="sonSpeed" role="group" aria-label="Длительность"><button type="button" data-d="60" aria-pressed="true">За 1 мин</button><button type="button" data-d="180" aria-pressed="false">За 3 мин</button></div></div>
-      <div class="row"><button class="btn" id="sonPlay" type="button">▶ Слушать ночь</button><span class="note mono" id="sonInfo"></span></div>
+      <div class="row"><button class="btn" id="sonPlay" data-ic="play" type="button">Слушать ночь</button><span class="note mono" id="sonInfo"></span></div>
       <div class="rd" id="sonNow"></div>
       <p class="note" id="sonMap"></p>
     </div>
@@ -658,7 +670,7 @@ footer{border-top:1px solid var(--line);padding-top:20px;font-size:13px;color:va
 </header>
 <section aria-label="Таймер">
   <div class="prac" id="prac">
-    <div style="display:flex;flex-direction:column;gap:14px">
+    <div style="display:flex;flex-direction:column;gap:16px">
       <div class="breath" id="breath">
         <div class="ring"></div>
         <div class="orb" id="orb"></div>
@@ -667,9 +679,9 @@ footer{border-top:1px solid var(--line);padding-top:20px;font-size:13px;color:va
         <div class="bfoot"><span id="bName"></span><span class="mono" id="bLeft"></span></div>
       </div>
       <div class="row">
-        <button class="btn" id="tStart" type="button">▶ Старт</button>
+        <button class="btn" id="tStart" data-ic="play" type="button">Старт</button>
         <button class="btn ghost" id="tReset" type="button">Сбросить</button>
-        <button class="btn ghost" id="tSound" type="button" aria-pressed="false">♪ Звук смены фаз</button>
+        <button class="btn ghost" id="tSound" data-ic="music" type="button" aria-pressed="false">Звук смены фаз</button>
       </div>
     </div>
     <div style="display:flex;flex-direction:column;gap:16px">
@@ -696,13 +708,13 @@ footer{border-top:1px solid var(--line);padding-top:20px;font-size:13px;color:va
     <label for="ageRange" class="eyebrow">Возраст</label>
     <input type="range" id="ageRange" min="0" max="90" step="1" value="30">
     <div class="two">
-      <div style="display:flex;flex-direction:column;gap:10px;min-width:0">
+      <div style="display:flex;flex-direction:column;gap:12px;min-width:0">
         <h3>Главный ритм над затылком</h3>
         <div class="stat"><b id="agePdr">≈10 Гц</b><span id="agePdrNote">альфа взрослого</span></div>
         <canvas class="trace gridbg" id="cAgeWave" aria-label="Волна главного ритма для выбранного возраста"></canvas>
         <p class="note">Окно 2 секунды, частота в реальном масштабе.</p>
       </div>
-      <div style="display:flex;flex-direction:column;gap:10px;min-width:0">
+      <div style="display:flex;flex-direction:column;gap:12px;min-width:0">
         <h3>Сон в этом возрасте</h3>
         <div class="stats" id="ageSleep"></div>
         <p class="note" id="ageText"></p>
@@ -974,7 +986,7 @@ function select(i){const b=BANDS[i];
   document.getElementById("detail").style.setProperty("--c",`var(--${b.id})`);
   band.innerHTML=`<div class="band-hero"><div class="art"><span class="greek">${b.g}</span>${b.icon}<span class="hz">${fmt(b.lo)}–${b.hi} Гц</span></div>
     <div class="band-name"><h2>${b.name}</h2><p>${b.state}</p></div>
-    <div class="row" style="gap:18px"><a class="golink" href="#brain" data-mode="${b.id}">Где в мозге →</a><a class="golink" href="#${b.research[0]}">${b.research[1]} →</a></div></div>
+    <div class="row" style="gap:16px"><a class="golink" href="#brain" data-mode="${b.id}">Где в мозге →</a><a class="golink" href="#${b.research[0]}">${b.research[1]} →</a></div></div>
    <div class="facts">
     <div class="block"><h3>Что делает</h3><p>${b.what}</p></div>
     <div class="block"><h3>На что влияет</h3><ul class="clean">${b.affects.map(a=>`<li>${a}</li>`).join("")}</ul></div>
@@ -998,10 +1010,10 @@ function upd(){exF=hzOf(+range.value);const b=BANDS[bandOf(exF)];
 range.addEventListener("input",upd);range.value=Math.round(1000*Math.log(20)/Math.log(200));upd();
 function audio(){ac=ac||new (window.AudioContext||window.webkitAudioContext)();ac.resume();return ac}
 const play=document.getElementById("play"),vol=document.getElementById("vol");
-play.onclick=()=>{if(osc){gain.gain.setTargetAtTime(0,ac.currentTime,.05);const o=osc;setTimeout(()=>{o.l.stop();o.r.stop()},300);osc=null;play.textContent="▶ Слушать в наушниках";return}
+play.onclick=()=>{if(osc){gain.gain.setTargetAtTime(0,ac.currentTime,.05);const o=osc;setTimeout(()=>{o.l.stop();o.r.stop()},300);osc=null;setBtn(play,"play","Слушать в наушниках");return}
   try{audio();gain=ac.createGain();gain.gain.value=0;gain.connect(ac.destination);
    const mk=(f,p)=>{const o=ac.createOscillator();o.frequency.value=f;const pn=ac.createStereoPanner();pn.pan.value=p;o.connect(pn).connect(gain);o.start();return o};
-   osc={l:mk(200,-1),r:mk(200+exF,1)};gain.gain.setTargetAtTime(vol.value/100*0.25,ac.currentTime,.2);play.textContent="■ Остановить"}catch(e){play.textContent="Звук недоступен"}};
+   osc={l:mk(200,-1),r:mk(200+exF,1)};gain.gain.setTargetAtTime(vol.value/100*0.25,ac.currentTime,.2);setBtn(play,"square","Остановить")}catch(e){setBtn(play,"","Звук недоступен")}};
 vol.oninput=()=>{if(gain)gain.gain.setTargetAtTime(vol.value/100*0.25,ac.currentTime,.05)};
 
 const DAY=[["delta",3,"00–03","Глубокий сон: дельта в первой половине ночи"],["theta",1.5,"03–04:30","Чередуются фазы, больше быстрого сна с тетой"],["delta",.8,""],["theta",1.7,"","Под утро сны длиннее, тета ведёт"],["alpha",.8,"07–08","Пробуждение, тихое утро"],["beta",4,"08–12","Утренний фокус: лучшее время для сложной работы"],["gamma",1,"","Пики глубокой концентрации"],["alpha",1,"13–14","Послеобеденный спад"],["beta",4,"14–18","Рутинная работа, встречи"],["alpha",3,"18–21","Отдых, прогулка, семья"],["alpha",1.2,""],["theta",1,"22–23","Засыпание: альфа сменяется тетой"],["delta",1,"23–24","Первый цикл глубокого сна"]];
@@ -1270,12 +1282,12 @@ function renderT(){const ph=phaseAt(tElapsed);const p=PRESETS[pIdx].pat;
   if(tRun&&soundOn&&ph.i!==lastPh){beep(ph.name)}lastPh=ph.i}
 const ease=x=>.5-.5*Math.cos(Math.PI*x);
 function beep(n){try{audio();const o=ac.createOscillator(),g=ac.createGain();o.type="sine";o.frequency.value=n==="Вдох"?528:n==="Выдох"?396:440;g.gain.value=0;o.connect(g).connect(ac.destination);const t=ac.currentTime;g.gain.linearRampToValueAtTime(.08,t+.05);g.gain.exponentialRampToValueAtTime(.0001,t+1.2);o.start(t);o.stop(t+1.3)}catch(e){}}
-function tick(now){if(!tRun)return;tElapsed+=Math.min(.25,(now-tLast)/1000);tLast=now;if(tElapsed>=dur*60){tElapsed=dur*60;tRun=false;document.getElementById("tStart").textContent="▶ Ещё раз";document.getElementById("bPh").textContent="Готово";document.getElementById("bSec").textContent="сессия завершена";document.getElementById("bPrompt").textContent="";if(soundOn)beep("Вдох");releaseWake();return}renderT();requestAnimationFrame(tick)}
+function tick(now){if(!tRun)return;tElapsed+=Math.min(.25,(now-tLast)/1000);tLast=now;if(tElapsed>=dur*60){tElapsed=dur*60;tRun=false;setBtn(document.getElementById("tStart"),"play","Ещё раз");document.getElementById("bPh").textContent="Готово";document.getElementById("bSec").textContent="сессия завершена";document.getElementById("bPrompt").textContent="";if(soundOn)beep("Вдох");releaseWake();return}renderT();requestAnimationFrame(tick)}
 async function getWake(){try{wake=await navigator.wakeLock?.request("screen")}catch(e){wake=null}}
 function releaseWake(){try{wake&&wake.release()}catch(e){}wake=null}
-document.getElementById("tStart").onclick=()=>{if(tRun){tRun=false;document.getElementById("tStart").textContent="▶ Продолжить";releaseWake();return}
-  if(tElapsed>=dur*60)tElapsed=0;tRun=true;tLast=performance.now();lastPh=-1;document.getElementById("tStart").textContent="❚❚ Пауза";getWake();if(soundOn)audio();requestAnimationFrame(tick)};
-function resetT(){tRun=false;tElapsed=0;lastPh=-1;scaleNow=.45;releaseWake();document.getElementById("tStart").textContent="▶ Старт";document.getElementById("bPh").textContent="Готово";document.getElementById("bSec").textContent="нажмите старт";renderT()}
+document.getElementById("tStart").onclick=()=>{if(tRun){tRun=false;setBtn(document.getElementById("tStart"),"play","Продолжить");releaseWake();return}
+  if(tElapsed>=dur*60)tElapsed=0;tRun=true;tLast=performance.now();lastPh=-1;setBtn(document.getElementById("tStart"),"pause","Пауза");getWake();if(soundOn)audio();requestAnimationFrame(tick)};
+function resetT(){tRun=false;tElapsed=0;lastPh=-1;scaleNow=.45;releaseWake();setBtn(document.getElementById("tStart"),"play","Старт");document.getElementById("bPh").textContent="Готово";document.getElementById("bSec").textContent="нажмите старт";renderT()}
 document.getElementById("tReset").onclick=resetT;
 document.getElementById("tSound").onclick=e=>{soundOn=!soundOn;e.currentTarget.setAttribute("aria-pressed",soundOn);if(soundOn)audio()};
 document.addEventListener("visibilitychange",()=>{if(!document.hidden&&tRun){tLast=performance.now();getWake()}});
@@ -1335,10 +1347,10 @@ sonMapText();
 document.getElementById("sonSpeed").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;sonDur=+b.dataset.d;document.querySelectorAll("#sonSpeed button").forEach(x=>x.setAttribute("aria-pressed",x===b));sonMapText();if(sonSrc){sonStop();sonStart()}});
 async function sonLoad(){if(sonBuf)return sonBuf;sonLoading=true;sonInfo.textContent="загружаю запись, 2,5 МБ…";
   const r=await fetch("/night.wav");if(!r.ok)throw new Error(r.status);const a=new Uint8Array(await r.arrayBuffer(),44);const f=new Float32Array(a.length);for(let i=0;i<a.length;i++)f[i]=(a[i]-128)/127;sonBuf=f;sonLoading=false;sonInfo.textContent="";return f}
-function sonStop(){try{sonSrc&&sonSrc.stop()}catch(e){}sonSrc=null;sonEpoch=-1;sonPlay.textContent="▶ Слушать ночь";document.getElementById("phLine").hidden=true;document.getElementById("sonNow").innerHTML="";drawRadial()}
+function sonStop(){try{sonSrc&&sonSrc.stop()}catch(e){}sonSrc=null;sonEpoch=-1;setBtn(sonPlay,"play","Слушать ночь");document.getElementById("phLine").hidden=true;document.getElementById("sonNow").innerHTML="";drawRadial()}
 async function sonStart(){try{const f=await sonLoad();audio();const sr=Math.round(f.length/sonDur);const buf=ac.createBuffer(1,f.length,sr);buf.copyToChannel(f,0);
     const src=ac.createBufferSource();src.buffer=buf;const hp=ac.createBiquadFilter();hp.type="highpass";hp.frequency.value=60;const cmp=ac.createDynamicsCompressor();cmp.threshold.value=-30;cmp.ratio.value=6;const g=ac.createGain();g.gain.value=.55;
-    src.connect(hp).connect(cmp).connect(g).connect(ac.destination);src.onended=()=>{if(sonSrc===src)sonStop()};src.start();sonSrc=src;sonT0=ac.currentTime;sonPlay.textContent="■ Остановить";requestAnimationFrame(sonTick)}
+    src.connect(hp).connect(cmp).connect(g).connect(ac.destination);src.onended=()=>{if(sonSrc===src)sonStop()};src.start();sonSrc=src;sonT0=ac.currentTime;setBtn(sonPlay,"square","Остановить");requestAnimationFrame(sonTick)}
   catch(e){sonLoading=false;sonInfo.textContent="Запись не загрузилась. Обновите страницу и попробуйте ещё раз."}}
 sonPlay.onclick=()=>{if(sonLoading)return;if(sonSrc)sonStop();else sonStart()};
 function sonTick(){if(!sonSrc)return;const p=(ac.currentTime-sonT0)/sonDur;if(p>=1)return;const e=Math.min(NE-1,Math.floor(p*NE));if(e!==sonEpoch){sonEpoch=e;
@@ -1387,7 +1399,7 @@ function qRender(){const prog=`<div class="qprog">${QZ.map((_,i)=>`<i class="${i
   quiz.querySelectorAll(".qopt").forEach(b=>b.onclick=()=>qAnswer(+b.dataset.k))}
 function qAnswer(k){const [,,ok,exp,link,c]=QZ[qi];qRes.push(k===ok);quiz.querySelectorAll(".qopt").forEach((b,i)=>{b.disabled=true;if(i===ok)b.classList.add("right");else if(i===k)b.classList.add("wrong")});
   const lt=link==="brain"?"Посмотреть в 3D-модели →":link==="timeline"?"К хронологии →":"Читать историю →";
-  document.getElementById("qAfter").innerHTML=`<div class="qexp" style="--c:var(${c})"><b>${k===ok?"Верно.":"Не совсем."}</b><p>${exp}</p><a class="golink" style="--c:var(${c})" href="#${link}">${lt}</a></div><div class="row" style="margin-top:14px"><button class="btn" type="button" id="qNext">${qi+1<QZ.length?"Дальше":"Узнать результат"}</button></div>`;
+  document.getElementById("qAfter").innerHTML=`<div class="qexp" style="--c:var(${c})"><b>${k===ok?"Верно.":"Не совсем."}</b><p>${exp}</p><a class="golink" style="--c:var(${c})" href="#${link}">${lt}</a></div><div class="row" style="margin-top:16px"><button class="btn" type="button" id="qNext">${qi+1<QZ.length?"Дальше":"Узнать результат"}</button></div>`;
   quiz.querySelector(".qprog").outerHTML=`<div class="qprog">${QZ.map((_,i)=>`<i class="${i<qRes.length?(qRes[i]?"ok":"no"):""}"></i>`).join("")}</div>`;
   const nb=document.getElementById("qNext");nb.onclick=()=>{qi++;qRender();quiz.querySelector(".qopt,.btn")?.focus()};nb.focus()}
 qRender();
